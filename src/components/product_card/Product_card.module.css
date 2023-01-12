@@ -1,0 +1,32 @@
+.product_card{
+    padding: 40px 25px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product_card_name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product_card img{
+    width: 100%;
+}
+
+.product_card p{
+    opacity: 80%;
+}
+
+.btn {
+    border: 1px solid #0071e3;
+    border-radius: 20px;
+    text-align: center;
+    white-space: nowrap;
+    background: #0071e3;
+    color: #fff;
+    padding: 4px 11px;
+}

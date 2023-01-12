@@ -1,0 +1,6 @@
+.catalog_container{
+    display: flex;
+    gap:25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}

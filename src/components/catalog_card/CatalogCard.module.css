@@ -1,0 +1,19 @@
+.catalog_card{
+    background: #F7F7F7;
+    padding: 40px 25px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog_card img{
+    width: 100%;
+    margin-bottom: 15px;
+}
