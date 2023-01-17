@@ -8,19 +8,18 @@ import Ipad from "./pages/ipad/Ipad";
 import AppleWatch from "./pages/appleWatch/AppleWatch";
 import CatalogList from "./pages/catalogList/CatalogList";
 import "./styles/global.css";
+import Header from "./components/header/Header";
+import ProductsPage from "./pages/productsPage/ProductsPage";
 
 const App = () => {
   return (
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
           <Route path="/about-us" element={<AboutUsPage/>}/>
-          <Route path="/catalog" element={<Catalog/>}>
-              <Route index element={<CatalogList/>}/>
-              <Route path="iphone" element={<Iphone/>}/>
-              <Route path="iPad" element={<Ipad/>}/>
-              <Route path="apple-watch" element={<AppleWatch/>}/>
-          </Route>
+          <Route path="/catalog" element={<CatalogList/>}/>
+          <Route path="/catalog/:product" element={<ProductsPage/>}/>
         </Routes>
       </BrowserRouter>
   )
@@ -29,10 +28,10 @@ const App = () => {
 // http://localhost:3000   - megacom.kg/catalog/iphone
 // http://localhost:3002  - megacombugaga.kg/catalog/iphone
 /*
-http://localhost:3000/catalog - Catalog, CatalogList
-http://localhost:3000/catalog/iphone - Catalog, Iphone
-http://localhost:3000/catalog/iPad   - Catalog, Ipad
-http://localhost:3000/catalog/apple-watch - Catalog, appleWatch
+http://localhost:3000/catalog - CatalogList
+http://localhost:3000/catalog/iphone - ProductsPage
+http://localhost:3000/catalog/iPad   - ProductsPage
+http://localhost:3000/catalog/apple-watch - ProductsPage
 */
 
 export default App;

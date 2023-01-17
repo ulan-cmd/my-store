@@ -1,6 +1,13 @@
+body{
+   margin: 0;
+}
+
 .container{
-    display: flex;
-    gap:25px;
     max-width: 1100px;
     margin: 0 auto;
+}
+
+.active-link{
+    color: #5E8BCE!important;
+    font-size: 17px!important;
 }
