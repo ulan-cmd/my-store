@@ -7,6 +7,31 @@ const ipad_img_url = 'https://istore.kg/media/category/ipad-pro-model-select-gal
 const watch_img_url = 'https://istore.kg/media/category/watch-card-50-compare-202209_GEO_US.webp';
 
 const CatalogList = () => {
+
+    const getUsers = () => {
+        const link = 'https://jsonplaceholder.typicode.com/users';
+
+        fetch(link)
+            .then(response => response.json())
+            .then(data =>  console.log(data))
+
+        /*
+        * name
+        * email
+        * phone
+        * website
+        * props, state
+        * */
+    }
+
+    const getPosts = () => {
+        const link = 'https://jsonplaceholder.typicode.com/posts';
+
+        fetch(link)
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+
     return (
         <div className={styles.catalog_container}>
             <CatalogCard
@@ -24,6 +49,13 @@ const CatalogList = () => {
                 name="apple-watch"
                 link="apple-watch"
             />
+
+            <button onClick={getUsers}>
+                Получить ползователей
+            </button>
+            <button onClick={getPosts}>
+                Получить посты
+            </button>
         </div>
     )
 }
