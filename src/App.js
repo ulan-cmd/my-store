@@ -7,6 +7,8 @@ import "./styles/global.css";
 import Header from "./components/header/Header";
 import ProductsPage from "./pages/productsPage/ProductsPage";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
+import UsersPage from "./pages/usersPage/UsersPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
@@ -17,19 +19,11 @@ const App = () => {
           <Route path="/about-us" element={<AboutUsPage/>}/>
           <Route path="/catalog" element={<CatalogList/>}/>
           <Route path="/catalog/:product" element={<ProductsPage/>}/>
+          <Route path="/users" element={<UsersPage/>}/>
           <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
       </BrowserRouter>
   )
 }
-
-// http://localhost:3000   - megacom.kg/catalog/iphone
-// http://localhost:3002  - megacombugaga.kg/catalog/iphone
-/*
-http://localhost:3000/catalog - CatalogList
-http://localhost:3000/catalog/iphone - ProductsPage
-http://localhost:3000/catalog/iPad   - ProductsPage
-http://localhost:3000/catalog/apple-watch - ProductsPage
-*/
 
 export default App;
