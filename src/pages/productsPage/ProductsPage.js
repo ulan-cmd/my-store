@@ -1,24 +1,29 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import styles from "./Products.module.css";
-import ipads from "../../data/ipads";
-import iphones from "../../data/iphones";
-import watches from "../../data/watches";
 import Product_card from "../../components/product_card/Product_card";
 
 const ProductsPage = () => {
     const params = useParams();
-    let products = [];
+    const [products, setProducts] = useState([]);
 
-    if (params.product === 'iphone'){
-        products = iphones;
-    } else if(params.product === 'iPad'){
-        products = ipads;
-    } else if (params.product === 'apple-watch'){
-        products = watches;
+    const getProduct = () => {
+        let url;
+
+        if (params.product === 'iphone'){
+            url = 'http://localhost:3001/iphones';
+        } else if(params.product === 'ipad'){
+            url = 'http://localhost:3001/ipads';
+        } else if (params.product === 'apple-watch'){
+            url = 'http://localhost:3001/watchs';
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => setProducts(data))
     }
 
-    console.log(products);
+    useEffect(getProduct, []);
 
     return (
       <div className="container">
