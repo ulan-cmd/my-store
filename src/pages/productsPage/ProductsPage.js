@@ -37,7 +37,6 @@ const ProductsPage = () => {
                               img={item.img}
                               name={item.name}
                               price={item.price}
-                              price_usd={item.price_usd}
                           />
                       )
                   })

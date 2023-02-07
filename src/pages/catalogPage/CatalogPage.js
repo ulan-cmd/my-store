@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import styles from "./CatalogList.module.css";
+import styles from "./CatalogPage.module.css";
 import CatalogCard from "../../components/catalog_card/CatalogCard";
 
-const CatalogList = () => {
+const CatalogPage = () => {
     const [catalog, setCatalog] = useState([]);
 
     const getCatalog = () => {
@@ -33,4 +33,4 @@ const CatalogList = () => {
     )
 }
 
-export default CatalogList;
+export default CatalogPage;

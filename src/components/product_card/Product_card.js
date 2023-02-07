@@ -8,7 +8,6 @@ const Product_card = (props) => {
             <div className={styles.product_card_name}>
                 <h5>{props.name}</h5>
                 <p>{props.price}</p>
-                <p>{props.price_usd}</p>
                 <button className={styles.btn}>Выбрать</button>
             </div>
         </div>
