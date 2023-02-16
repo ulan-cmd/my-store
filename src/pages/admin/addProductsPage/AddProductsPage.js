@@ -1,15 +1,21 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import {urls} from "../../../data/constants";
 
 const AddProductsPage = () => {
 
     const save = (e) => {
         e.preventDefault();
         const name = e.target.name_product.value;
-        const price = e.target.price_product.value;
+        const price = +e.target.price_product.value;
         const img = e.target.img_product.value;
         const group = e.target.group.value;
+
+        if (group === "0"){
+            alert('Выберите обязательно продукцию');
+            return;
+        }
 
         const data = {
             name,
@@ -17,6 +23,22 @@ const AddProductsPage = () => {
             img
         }
 
+        const options = {
+            method:'POST',
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(data)
+        }
+
+        fetch(urls[group], options)
+            .then(response => {
+                if (response.ok){
+                    alert('Товар успешно создан');
+                } else {
+                    alert('Что-то пошло не так. Повторите')
+                }
+            })
     }
 
     return (
